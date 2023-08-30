@@ -1,0 +1,35 @@
+---
+    name: Gataria CI/CD Dev
+    on:
+      push:
+        branches:
+          - dev
+    
+    jobs:
+      build-dev:
+        name: Build dev
+        if: contains (github.ref, 'dev')
+        runs-on: self-hosted
+        steps:
+        - name: Clone repository
+          uses: actions/checkout@v3
+        - name: Step 2
+          run: ls
+        - name: run command
+          run: docker ps
+      test-dev:
+        name: Test dev
+        if: contains (github.ref, 'dev')
+        runs-on: self-hosted
+        needs: build-dev
+        steps:
+        - name: Step 1
+          run: env
+      deploy-dev:
+        name: Deploy dev
+        if: contains (github.ref, 'dev')
+        runs-on: self-hosted
+        needs: test-dev
+        steps:
+        - name: run command
+          run: echo $GITHUB_SHA

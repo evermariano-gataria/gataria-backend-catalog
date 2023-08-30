@@ -1,0 +1,26 @@
+{
+  "name": "gataria-backend-catalog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api.js",
+    "test": "npx mocha api.test.js --timeout 10000 --exit"
+  },
+  "keywords": [
+    "projeto",
+    "npm",
+    "init"
+  ],
+  "author": "Thailane Lopes Dutra",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.5",
+    "yup": "^1.1.1"
+  }
+}
