@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: running tests
-        run: npm test
+        run: MONGO_DATABASE=prod npm test
 
   deploy-prod:
     name: Deploy prod
