@@ -27,6 +27,8 @@ jobs:
     name: Test prod
     runs-on: self-hosted
     needs: build-prod
+    env:
+      MONGO_URL: ${{ secrets.MONGO_URL }}
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
